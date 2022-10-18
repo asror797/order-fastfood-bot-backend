@@ -3,13 +3,8 @@ const sequelize = require("../config/sequelize")
 
 
 const Users = sequelize.define('users',{
-   id: {
-      type: DataTypes.INTEGER,
-      autoincrement: true,
-      primaryKey: true,
-   },
    telegramid:{
-      type:DataTypes.INTEGER,
+      type:DataTypes.BIGINT,
       allowNull:false
    },
    fullname:{

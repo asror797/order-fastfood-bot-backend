@@ -1,17 +1,10 @@
 const express = require('express')
-const http = require('http')
+const app =express()
 const cors = require('cors')
-const app = express()
-app.use(cors)
-app.use(express.json())
-const router = require('./routes/router.js')
-const PORT = 9000
-const socketio = require('socket.io')
-require('./models/users.model')
+const router = require('./routes/router')
 const sequelize = require('./config/sequelize')
 
-
-
+require('./models/users.model')
 
 sequelize   
     .authenticate()
@@ -19,32 +12,14 @@ sequelize
     .catch((err) => console.error(err))
 sequelize.sync().then(() => console.log("OK"))
 
+app.use(cors())
+app.use(express.json())
+app.use(router)
 
-app.get('/',(req,res) => {
-   res.send('ok')
+
+
+
+
+app.listen(9000,() => {
+   console.log('Server is runing at 900 port')
 })
-
-
-
-const server = http.createServer(app)
-
-const io = socketio(server)
-
-
-io.on("connection",socket => {
-
-   socket.on("connect",() => {
-      console.log('Server is ready')
-   })
-
-})
-
-
-
-
-server.listen(PORT,() => {
-   console.log('Server is runing at 9000 port')
-})
-
-
-
