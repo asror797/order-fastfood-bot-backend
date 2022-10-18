@@ -24,5 +24,19 @@ car-
 
 
 
+CREATE TABLE models (
+   id SERIAL PRIMARY KEY,
+   model_name VARCHAR(32) NOT NULL,
+)
+
+CREATE TABLE cars (
+   id SERIAL PRIMARY KEY,
+   title VARCHAR(512) NOT NULL,
+   price VARCHAR(56) ,
+   year INT ,
+   created VARCHAR(32),
+   phone_number VARCHAR(64)
+)
+
 
 
