@@ -24,7 +24,7 @@ module.exports = {
             }
          })
 
-         if(!isExist.telegramID) {
+         if(!isExist) {
             const newUser = await usersModel.create({
                telegramID:id,
                fullname:fullname,

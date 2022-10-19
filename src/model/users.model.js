@@ -8,7 +8,7 @@ const Users = sequelize.define('users',{
       defaultValue:DataTypes.UUIDV4
    },
    telegramID:{
-      type:DataTypes.INTEGER,
+      type:DataTypes.BIGINT,
       allowNull:false
    },
    fullname:{
