@@ -8,6 +8,10 @@ const Marks = sequelize.define('marks',{
       primaryKey:true,
       defaultValue:DataTypes.UUIDV4
    },
+   mark_id:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+   },
    mark_name:{
       type:DataTypes.STRING,
       allowNull:false
