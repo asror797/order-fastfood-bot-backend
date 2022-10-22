@@ -9,7 +9,8 @@ const Models = sequelize.define('models',{
       defaultValue:DataTypes.UUIDV4
    },
    mark_id:{
-      type:DataTypes.UUID
+      type:DataTypes.UUID,
+      allowNull:false
    },
    model_id:{
       type:DataTypes.INTEGER,
